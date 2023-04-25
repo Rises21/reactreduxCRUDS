@@ -8,7 +8,7 @@ export const fetchLaptop = createAsyncThunk(
     'laptopData/fetchLaptop',
       async (arg, {rejectWithValue}) => {
     try {
-    const response = await axios.get('http://localhost:3000/api/v4/product')
+    const response = await axios.get('http://localhost:3000/api/v3/product')//ganti v3 ke v4 untuk menggunakan endpoint yg lain
     console.log(response,"ini responseeeee");
     return response.data;
     } catch (error) {
@@ -21,7 +21,7 @@ export const findLaptop = createAsyncThunk(
     'laptopData/findLaptop',
       async (payload) => {
     try {
-    const response = await axios.get(`http://localhost:3000/api/v4/product/${payload}`)
+    const response = await axios.get(`http://localhost:3000/api/v3/product/${payload}`)//ganti v3 ke v4 untuk menggunakan endpoint yg lain
     console.log(response,"ini response findLaptop");
     return response.data;
     } catch (error) {
@@ -32,8 +32,8 @@ export const findLaptop = createAsyncThunk(
 
 export const addLaptop = createAsyncThunk(
     'laptopData/addLaptop',
-    async (payload) => {
-        const response = await axios.post('http://localhost:3000/api/v4/product'
+    async (payload) => { //ganti v3 ke v4 untuk menggunakan endpoint yg lain
+        const response = await axios.post('http://localhost:3000/api/v3/product'
         , 
         {  
             name: payload.name,
@@ -62,7 +62,7 @@ export const deleteLaptop = createAsyncThunk(
     'laptopData/deleteLaptop',
      async (payload) => {
         console.log(payload,"payload sialan");
-        const { data } = await axios.delete(`http://localhost:3000/api/v4/product/${payload}`)
+        const { data } = await axios.delete(`http://localhost:3000/api/v3/product/${payload}`) //ganti v3 ke v4 untuk menggunakan endpoint yg lain
         console.log(data,"ini data dari delete");
         return data;
     }
@@ -70,8 +70,8 @@ export const deleteLaptop = createAsyncThunk(
 
 export const updateLaptop = createAsyncThunk(
     'laptopData/updateLaptop',
-    async (payload) => {
-        const response = await axios.put(`http://localhost:3000/api/v4/product/${payload._id}`
+    async (payload) => { //ganti v3 ke v4 untuk menggunakan endpoint yg lain
+        const response = await axios.put(`http://localhost:3000/api/v3/product/${payload._id}` 
         , 
         {  
             name: payload.name,

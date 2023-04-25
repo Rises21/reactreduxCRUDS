@@ -21,7 +21,7 @@ const Tambah = () => {
   const onSubmit = async (e)  => {
       e.preventDefault();
       setStatusAdd(true, [statusAdd])
-            console.log(value,"inivalue react <<<<<<");
+            //console.log(value,"inivalue react <<<<<<");
            const ad = await dispatch(addLaptop(value));
         if (ad) {
           dispatch(fetchLaptop());
